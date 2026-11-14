@@ -30,13 +30,13 @@ Compare **10 free monospaced Nerd Fonts** side by side using realistic coding sn
 
 ## Syntax highlighting\n\nUses a lightweight, browser-side [highlight.js](https://highlightjs.org/) CDN script. No API keys, server, or model downloads. The referenced [research paper](https://arxiv.org/abs/2510.04166) describes ML highlighting, but this implementation deliberately uses deterministic highlighting instead of claiming to run its model.\n\n## Run locally
 
-Open `index.html` in a browser. Internet access is needed to load fonts from the Nerd Fonts CDN.
+Open `index.html` in a browser. After vendoring, all font files load from `assets/fonts/` on the same origin. Syntax highlighting currently loads highlight.js from a CDN.
 
-## Publish on GitHub Pages
+## Self-host the 10 fonts\n\nRun **Actions → Vendor Nerd Fonts → Run workflow** once. The workflow downloads the official Nerd Fonts release archives, selects each Mono Regular font, converts it to WOFF2, and commits `assets/fonts/0.woff2` through `9.woff2` to `main`. Until the workflow completes, the browser will fall back to monospace.\n\nThe workflow needs GitHub Actions permission to write repository contents (Settings → Actions → General → Workflow permissions → Read and write permissions), unless an organization policy already grants it.\n\n## Publish on GitHub Pages
 
 In **Settings → Pages**, select **Deploy from a branch**, branch **main**, folder **/(root)**, then save.
 
-> Font URLs use Nerd Fonts v3.4.0 CDN paths and have not been verified individually in a browser. If a font fails to load, inspect the corresponding upstream patched-font path.
+The font files are generated from official Nerd Fonts release assets; no font binaries are committed until the vendor workflow runs successfully.
 
 ## Licenses
 
