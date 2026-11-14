@@ -24,11 +24,11 @@ Compare **10 free monospaced Nerd Fonts** side by side using realistic coding sn
 - Two-column comparison (switchable to one column)
 - TypeScript, React/TSX, Node.js, Go, Python, Rust, SQL, Bash, JSON, YAML
 - Adjustable font size
-- Editable snippets
+- Syntax highlighting toggle (highlight.js, client-side, GitHub Dark)\n- Editable snippets
 - Dark theme and responsive layout
 - No build process or tracking
 
-## Run locally
+## Syntax highlighting\n\nUses a lightweight, browser-side [highlight.js](https://highlightjs.org/) CDN script. No API keys, server, or model downloads. The referenced [research paper](https://arxiv.org/abs/2510.04166) describes ML highlighting, but this implementation deliberately uses deterministic highlighting instead of claiming to run its model.\n\n## Run locally
 
 Open `index.html` in a browser. Internet access is needed to load fonts from the Nerd Fonts CDN.
 
